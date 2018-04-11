@@ -70,9 +70,41 @@ def seatsInTheater(nCols, nRows, col, row):
     return rows_affected * cols_affected
 
 
+# PROBLEM 5
+def maxMultiple(divisor, bound):
+
+    """
+    Return the largest int (less or equal to the bound)
+    that is...
+    1) evenly divisible by the divisor
+    2) is greater than zero.
+    Guaranteed that an answer exists (a multiple of the divisor)
+    >>> maxMultiple(3, 10)
+    9
+    >>> maxMultiple(7, 101)
+    98
+    """
+
+    return (bound / divisor) * divisor
+
+
+def circleOfNumbers(n, firstNumber):
+    """
+    Given n and firstNumber, find the number which is 
+    written in the radially opposite position to firstNumber.
+    (In a circle of integers, starting with 0 and ending at n-1)
+    >>> circleOfNumbers(6, 3)
+    0
+    >>> circleOfNumbers(10, 2)
+    7
+    """
+    ans = (n / 2) + firstNumber
+    if ans >= n:
+        ans -= n
+    return ans
 
 if __name__ == "__main__":
     import doctest
 
-    if not doctest.testmod(verbose=True).failed:
+    if not doctest.testmod().failed:
         print "\nALL TESTS PASSED"
