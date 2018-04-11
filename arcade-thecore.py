@@ -29,6 +29,7 @@ def largestNumber(n):
     num = n * "9"
     return int(num)
 
+
 # PROBLEM 3
 def candies(n, m):
     """
@@ -88,9 +89,10 @@ def maxMultiple(divisor, bound):
     return (bound / divisor) * divisor
 
 
+# PROBLEM 6
 def circleOfNumbers(n, firstNumber):
     """
-    Given n and firstNumber, find the number which is 
+    Given n and firstNumber, find the number which is
     written in the radially opposite position to firstNumber.
     (In a circle of integers, starting with 0 and ending at n-1)
     >>> circleOfNumbers(6, 3)
@@ -102,6 +104,28 @@ def circleOfNumbers(n, firstNumber):
     if ans >= n:
         ans -= n
     return ans
+
+
+# PROBLEM 7
+def lateRide(n):
+
+    """
+    Calculate the time given
+    - start time is 00:00
+    - n number of minutes have elapsed since start time
+    ** Time should be returned as a sum of the digits of the time,
+    with a 24-hr clock
+    >>> lateRide(808)
+    14
+    """
+
+    hours, mins = divmod(n, 60)
+    h1, h2 = divmod(hours, 10)
+    m1, m2 = divmod(mins, 10)
+    return h1 + h2 + m1 + m2
+
+
+
 
 if __name__ == "__main__":
     import doctest
