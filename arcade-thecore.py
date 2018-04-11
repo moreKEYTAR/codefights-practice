@@ -125,6 +125,30 @@ def lateRide(n):
     return h1 + h2 + m1 + m2
 
 
+# PROBLEM 8
+def phoneCall(min1, min2_10, min11, s):
+
+    # min1 is 1 minute in length
+    # min2_10 is 9 minutes in length
+
+    min_count = 0
+
+    if s >= min1:
+        min_count += 1
+        s -= min1
+
+        if s >= min2_10:
+            num_min2_10 = s/min2_10
+            if num_min2_10 < 9:
+                min_count += num_min2_10
+            else:
+                min_count += 9
+                s -= (min2_10 * 9)
+
+                if s >= min11:
+                    num_min11 = s/min11
+                    min_count += num_min11
+    return min_count
 
 
 if __name__ == "__main__":
